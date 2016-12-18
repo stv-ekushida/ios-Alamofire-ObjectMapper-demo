@@ -1,4 +1,4 @@
-# ios-Alamofire4-demo
+# ios-Alamofire-ObjectMapper-demo
 
 |category | Version| 
 |---|---|
