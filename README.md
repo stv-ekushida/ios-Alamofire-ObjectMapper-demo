@@ -111,6 +111,42 @@ extension ViewController: GourmetSearchLoadable{
 
 ```
 
+## 参考
+インフラ部分は、下記のとおりです。
+
+```
+import Alamofire
+
+enum Result {
+    case success(Any)
+    case failure(Error)
+}
+
+final class APIClient {
+    
+    func request(router : Router,
+                 completionHandler: @escaping (Result) -> () = {_ in}) {
+        
+        Alamofire.request(router).responseJSON  { response in
+            switch response.result {
+            case .success(let value):
+                completionHandler(Result.success(value))
+                
+            case .failure:
+                
+                if let error = response.result.error {
+                    completionHandler(Result.failure(error))
+                } else {
+                    fatalError("エラーのインスタンスがnil")
+                }
+            }
+        }
+    }
+}
+
+```
+
+## 環境
 
 |category | Version| 
 |---|---|
