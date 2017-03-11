@@ -7,24 +7,29 @@
 //
 
 import Alamofire
-import ObjectMapper
 
-final class APIClient<T> {
+enum Result {
+    case success(Any)
+    case failure(Error)
+}
+
+final class APIClient {
     
-    func gourmeSearch(params : [String: Any],
-                      completionHandler: @escaping (Result<T>) -> () = {_ in}) {
-                
-        Alamofire.request(Router.GourmetSearch(params)).responseJSON  { response in
+    func request(router : Router,
+                 completionHandler: @escaping (Result) -> () = {_ in}) {
+        
+        Alamofire.request(router).responseJSON  { response in
             switch response.result {
             case .success(let value):
-                if let resp = Mapper<GourmetResponse>().map(JSONObject: value) {
-                    completionHandler(Result<T>.Success((resp as? T)!))
-                }
-                break
+                completionHandler(Result.success(value))
                 
             case .failure:
-                completionHandler(Result<T>.Failure(response.result.error!))
-                break
+                
+                if let error = response.result.error {
+                    completionHandler(Result.failure(error))
+                } else {
+                    fatalError("エラーのインスタンスがnil")
+                }
             }
         }
     }

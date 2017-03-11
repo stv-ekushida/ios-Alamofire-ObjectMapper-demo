@@ -6,25 +6,28 @@
 //  Copyright © 2016年 Kushida　Eiji. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
 final class PhotoSearchAPI {
     
     var loadable: GourmetSearchLoadable?
     
-    func load() {
+    func fetch() {
                 
-        APIClient<GourmetResponse>().gourmeSearch(
-            params: GourmetSearchParamsBuilder.create()) {
-                [weak self](response) -> () in
-            
+        let router = Router.GourmetSearch(
+            GourmetSearchParamsBuilder.create()
+        )
+        
+        APIClient().request(router: router) { [weak self] (response) in
             switch response {
-            case .Success(let result):
+            case .success(let result):
                 
-                self?.loadable?.setStatus(status: .normal, result: result)
+                if let searchResult = Mapper<GourmetResponse>().map(JSONObject: result) {
+                    self?.loadable?.setStatus(status: .loaded(searchResult))
+                }
                 
-            case .Failure( _):
-                self?.loadable?.setStatus(status: .error, result: nil)
+            case .failure( _):
+                self?.loadable?.setStatus(status: .error)
             }
         }
     }

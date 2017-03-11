@@ -15,25 +15,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         api.loadable = self        
-        api.load()
+        api.fetch()
     }
 }
 
 //MARK:-GourmetSearchLoadable
 extension ViewController: GourmetSearchLoadable{
     
-    func setStatus(status: GroumetSearchStatus,
-                   result: GourmetResponse?) {
+    func setStatus(status: GroumetSearchStatus) {
         
         switch status {
-        case .normal:
+        case .loaded(let result):
             
-            result?.results?.shop?.forEach {
+            result.results?.shop?.forEach {
                 print($0.name, $0.genre?.name ?? "")
             }
-            break
-        default:
-            break
+
+        case .none: break
+        case .noData: break
+        case .error: break
+        case .offline: break
         }
     }
 }

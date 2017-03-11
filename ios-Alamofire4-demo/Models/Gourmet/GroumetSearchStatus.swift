@@ -11,7 +11,7 @@ import Foundation
 enum GroumetSearchStatus {
     case none
     case noData
-    case normal
+    case loaded(GourmetResponse)
     case offline
     case error
 }
