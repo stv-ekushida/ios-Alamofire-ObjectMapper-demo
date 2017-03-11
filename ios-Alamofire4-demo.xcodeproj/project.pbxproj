@@ -19,8 +19,6 @@
 		BC0E245C1E066A7D00F40B66 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E245B1E066A7D00F40B66 /* APIClient.swift */; };
 		BC0E24601E066B9400F40B66 /* GourmetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E245F1E066B9400F40B66 /* GourmetResponse.swift */; };
 		BC0E24621E06716600F40B66 /* GourmetSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E24611E06716600F40B66 /* GourmetSearchAPI.swift */; };
-		BC0E24641E0671CA00F40B66 /* GourmetSearchLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E24631E0671CA00F40B66 /* GourmetSearchLoadable.swift */; };
-		BC0E24661E0671F800F40B66 /* GroumetSearchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E24651E0671F800F40B66 /* GroumetSearchStatus.swift */; };
 		BC0E24681E06724C00F40B66 /* GourmetSearchParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E24671E06724C00F40B66 /* GourmetSearchParamsBuilder.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +52,6 @@
 		BC0E245B1E066A7D00F40B66 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BC0E245F1E066B9400F40B66 /* GourmetResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GourmetResponse.swift; sourceTree = "<group>"; };
 		BC0E24611E06716600F40B66 /* GourmetSearchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GourmetSearchAPI.swift; sourceTree = "<group>"; };
-		BC0E24631E0671CA00F40B66 /* GourmetSearchLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GourmetSearchLoadable.swift; sourceTree = "<group>"; };
-		BC0E24651E0671F800F40B66 /* GroumetSearchStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroumetSearchStatus.swift; sourceTree = "<group>"; };
 		BC0E24671E06724C00F40B66 /* GourmetSearchParamsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GourmetSearchParamsBuilder.swift; sourceTree = "<group>"; };
 		E99586D809B051DD72EF98A1 /* Pods_ios_Alamofire4_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_Alamofire4_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -154,9 +150,7 @@
 			children = (
 				BC0E245F1E066B9400F40B66 /* GourmetResponse.swift */,
 				BC0E24611E06716600F40B66 /* GourmetSearchAPI.swift */,
-				BC0E24631E0671CA00F40B66 /* GourmetSearchLoadable.swift */,
 				BC0E24671E06724C00F40B66 /* GourmetSearchParamsBuilder.swift */,
-				BC0E24651E0671F800F40B66 /* GroumetSearchStatus.swift */,
 			);
 			path = Gourmet;
 			sourceTree = "<group>";
@@ -396,9 +390,7 @@
 				BC0E24601E066B9400F40B66 /* GourmetResponse.swift in Sources */,
 				BC0E243C1E0669A400F40B66 /* ViewController.swift in Sources */,
 				BC0E24681E06724C00F40B66 /* GourmetSearchParamsBuilder.swift in Sources */,
-				BC0E24641E0671CA00F40B66 /* GourmetSearchLoadable.swift in Sources */,
 				BC0E245A1E066A3F00F40B66 /* Router.swift in Sources */,
-				BC0E24661E0671F800F40B66 /* GroumetSearchStatus.swift in Sources */,
 				BC0E243A1E0669A400F40B66 /* AppDelegate.swift in Sources */,
 				BC0E245C1E066A7D00F40B66 /* APIClient.swift in Sources */,
 				BC0E24621E06716600F40B66 /* GourmetSearchAPI.swift in Sources */,

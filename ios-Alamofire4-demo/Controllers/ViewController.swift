@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let api = PhotoSearchAPI()
+    let api = GourmetSearchAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()
