@@ -8,7 +8,19 @@
 
 import ObjectMapper
 
-final class PhotoSearchAPI {
+enum GroumetSearchStatus {
+    case none
+    case noData
+    case loaded(GourmetResponse)
+    case offline
+    case error
+}
+
+protocol GourmetSearchLoadable{
+    func setStatus(status: GroumetSearchStatus)
+}
+
+final class GourmetSearchAPI {
     
     var loadable: GourmetSearchLoadable?
     
@@ -31,5 +43,4 @@ final class PhotoSearchAPI {
             }
         }
     }
-    
 }
