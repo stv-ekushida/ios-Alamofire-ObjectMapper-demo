@@ -46,6 +46,14 @@ enum Router: URLRequestConvertible {
 ```
 import ObjectMapper
 
+enum GroumetSearchStatus {
+    case none
+    case noData
+    case loaded(GourmetResponse)
+    case offline
+    case error
+}
+
 final class PhotoSearchAPI {
     
     var loadable: GourmetSearchLoadable?
