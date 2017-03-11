@@ -54,7 +54,11 @@ enum GroumetSearchStatus {
     case error
 }
 
-final class PhotoSearchAPI {
+protocol GourmetSearchLoadable{
+    func setStatus(status: GroumetSearchStatus)
+}
+
+final class GourmetSearchAPI {
     
     var loadable: GourmetSearchLoadable?
     
@@ -76,7 +80,7 @@ final class PhotoSearchAPI {
                 self?.loadable?.setStatus(status: .error)
             }
         }
-    }    
+    }
 }
 
 ```
@@ -88,7 +92,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let api = PhotoSearchAPI()
+    let api = GourmetSearchAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()
