@@ -9,5 +9,5 @@
 import Foundation
 
 protocol GourmetSearchLoadable{
-    func setStatus(status: GroumetSearchStatus, result: GourmetResponse?)
+    func setStatus(status: GroumetSearchStatus)
 }
